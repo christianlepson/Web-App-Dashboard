@@ -135,44 +135,52 @@
                 <div id="new-members" class="col col-first">
                     <!-- Begin New Members -->
                     <h2 class="section-header">New Members</h2>
-                    <ul id="new-mem-list">
-                        <li class="new-mem-item activity-item">
-                            <img class="user-avatar" alt="" src="img/avatar1.jpg">
-                            <p class="mem-activity-info">
-                                <span class="user-name">John Alexander</span>
-                                <br>
-                                <a class="user-email" href="mailto:johna@example.com">johna@example.com</a>
-                            </p>
-                            <span class="join-date">10/17/2016</span>
-                        </li>
-                        <li class="new-mem-item activity-item">
-                            <img class="user-avatar" alt="" src="img/avatar2.jpg">
-                            <p class="mem-activity-info">
-                                <span class="user-name">Emilio Chavez</span>
-                                <br>
-                                <a class="user-email" href="mailto:emilioc@example.com">emilioc@example.com</a>
-                            </p>
-                            <span class="join-date">10/14/2016</span>
-                        </li>
-                        <li class="new-mem-item activity-item">
-                            <img class="user-avatar" alt="" src="img/avatar3.jpg">
-                            <p class="mem-activity-info">
-                                <span class="user-name">Aiden Jones</span>
-                                <br>
-                                <a class="user-email" href="mailto:aj@example.com">aj@example.com</a>
-                            </p>
-                            <span class="join-date">9/30/2016</span>
-                        </li>
-                        <li class="new-mem-item activity-item">
-                            <img class="user-avatar" alt="" src="img/avatar4.jpg">
-                            <p class="mem-activity-info">
-                                <span class="user-name">Keith Martell</span>
-                                <br>
-                                <a class="user-email" href="mailto:km@example.com">km@example.com</a>
-                            </p>
-                            <span class="join-date">9/18/2016</span>
-                        </li>
-                    </ul>
+                    <table id="new-mem-table">
+                        <tr class="new-mem-row">
+                            <td class="new-mem-item">
+                                <img class="user-avatar" alt="" src="img/avatar1.jpg">
+                                <p class="mem-activity-info">
+                                    <span class="user-name">John Alexander</span>
+                                    <br>
+                                    <a class="user-email" href="mailto:johna@example.com">johna@example.com</a>
+                                </p>
+                                <span class="join-date">10/17/2016</span>
+                            </td>
+                        </tr>
+                        <tr class="new-mem-row">
+                            <td class="new-mem-item">
+                                <img class="user-avatar" alt="" src="img/avatar2.jpg">
+                                <p class="mem-activity-info">
+                                    <span class="user-name">Emilio Chavez</span>
+                                    <br>
+                                    <a class="user-email" href="mailto:emilioc@example.com">emilioc@example.com</a>
+                                </p>
+                                <span class="join-date">10/14/2016</span>
+                            </td>
+                        </tr>
+                        <tr class="new-mem-row">
+                            <td class="new-mem-item">
+                                <img class="user-avatar" alt="" src="img/avatar3.jpg">
+                                <p class="mem-activity-info">
+                                    <span class="user-name">Aiden Jones</span>
+                                    <br>
+                                    <a class="user-email" href="mailto:aj@example.com">aj@example.com</a>
+                                </p>
+                                <span class="join-date">9/30/2016</span>
+                            </td>
+                        </tr>
+                        <tr class="new-mem-row">
+                            <td class="new-mem-item">
+                                <img class="user-avatar" alt="" src="img/avatar4.jpg">
+                                <p class="mem-activity-info">
+                                    <span class="user-name">Keith Martell</span>
+                                    <br>
+                                    <a class="user-email" href="mailto:km@example.com">km@example.com</a>
+                                </p>
+                                <span class="join-date">9/18/2016</span>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <!-- End New Members -->
                 <div id="member-activity" class="col col-second">
@@ -229,7 +237,7 @@
                 <div id="message" class="col col-first">
                     <!-- Begin Messages column -->
                     <h2 class="section-header">Messages</h2>
-                    <form id="user-message" action="#" method="get">
+                    <form id="user-message" action="#" method="post">
                         <input class="user-input" id="user-search" placeholder="Search for User" name="user-search" type="text">
                         <textarea id="user-message-area" class="user-input" rows="7" placeholder="Message for User"></textarea>
                         <input type="submit" value="submit" id="message-submit" class="btn submit-btn">
@@ -239,7 +247,7 @@
                 <div id="settings" class="col col-second">
                     <!-- Begin Settings column -->
                     <h2 class="section-header">Settings</h2>
-                    <form id="user-settings" action="get">
+                    <form id="user-settings" action="post">
                         <label class="switch-light switch-material toggle" onclick="">
                             <input type="checkbox">
                             <strong>Send Email Notifications</strong>
