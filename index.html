@@ -1,0 +1,365 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>App Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,600,400,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css">
+</head>
+
+<body>
+    <!-- Begin Main Header -->
+    <div id="main-header">
+        <h1 id="logo">Christian's<span id="logo-app-tm">App&trade;</span></h1>
+        <a id="header-bell-link" href="#">
+            <img id="header-icon-bell" src="img/icons/icon-bell.svg" alt="">
+            <div id="header-alert-notify"></div>
+        </a>
+        <div id="header-profile">
+            <a href="#">
+                <img class="avatar" id="profile-photo" src="img/profile-photo.jpg" alt="">
+                <span id="profile-name">Christian Lepson</span>
+            </a>
+        </div>
+    </div>
+    <!-- End Main Header -->
+    <!-- Begin Wrapper -->
+    <div id="wrapper">
+        <!-- Begin Main Navigation -->
+        <div id="main-nav" role="navigation">
+            <nav>
+                <ul>
+                    <li class="selected-li">
+                        <a href="#"><img src="img/icons/icon-dashboard.svg" alt="" class="selected-nav-icon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icons/icon-members.svg" alt="" class="nav-icon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icons/icon-visits.svg" alt="" class="nav-icon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icons/icon-settings.svg" alt="" class="nav-icon"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- End Main Navigation -->
+        <!-- Begin Dashboard Content -->
+        <div id="dashboard-content">
+            <div id="search-tabs">
+                <div class="tab" id="current-tab">
+                    <h2 class="tab-header">Dashboard</h2>
+                </div>
+                <div id="search-box">
+                    <!-- Begin Tabs and Search Box -->
+                    <div id="search-wrapper">
+                        <input type="text" id="search" name="search" maxlength="50">
+                        <input type="image" alt="Search" id="search-button" src="img/icons/icon-magnifying-glass.svg">
+                    </div>
+                </div>
+            </div>
+            <!-- End Tabs and Search Box -->
+            <div id="alerts">
+                <!-- Begin Alerts -->
+            </div>
+            <!-- End Alerts -->
+            <div class="row-1">
+                <!-- Begin Row 1 -->
+                <h2 class="section-header">Traffic</h2>
+                <ul class="graph-ul">
+                    <li class="graph-li graph-li-selected">
+                        <button id="hourly-btn">Hourly</button>
+                    </li>
+                    <li class="graph-li">
+                        <button id="daily-btn">Daily</button>
+                    </li>
+                    <li class="graph-li">
+                        <button id="weekly-btn">Weekly</button>
+                    </li>
+                    <li class="graph-li">
+                        <button id="monthly-btn">Monthly</button>
+                    </li>
+                </ul>
+                <canvas id="total-traffic" height="250" width="700"></canvas>
+            </div>
+            <!-- End Row 1 -->
+            <div id="charts" class="row-2">
+                <!-- Begin Row 2 -->
+                <div id="bar-graph" class="col col-first">
+                    <!-- Begin Bar Graph -->
+                    <h2 class="section-header">Daily Traffic</h2>
+                    <canvas id="daily-traffic" height="260" width="470"></canvas>
+                </div>
+                <!-- End Bar Graph -->
+                <div id="pie-chart" class="col col-second">
+                    <!-- Begin Pie Chart -->
+                    <h2 class="section-header">Mobile Users</h2>
+                    <canvas id="mobile-users" height="260" width="470"></canvas>
+                </div>
+                <!-- End Pie Chart -->
+            </div>
+            <!-- End Row 2 -->
+            <div id="social-stats" class="col">
+                <!-- Begin Social Stats -->
+                <h2 class="section-header">Social Stats</h2>
+                <div id="stat-container">
+                    <div id="twitter" class="stat-card">
+                        <a href="https://www.twitter.com"><span class="social-link"></span></a>
+                        <h3>Twitter</h3>
+                        <img class="social-icon" src="img/icons/icon-twitter.svg" alt="">
+                        <span>10,345</span>
+                    </div>
+                    <div id="facebook" class="stat-card">
+                        <a href="https://www.facebook.com"><span class="social-link"></span></a>
+                        <h3>Facebook</h3>
+                        <img class="social-icon" src="img/icons/icon-facebook.svg" alt="">
+                        <span>8,735</span>
+                    </div>
+                    <div id="google" class="stat-card">
+                        <a href="https://www.plus.google.com"><span class="social-link"></span></a>
+                        <h3>Google+</h3>
+                        <img class="social-icon" src="img/icons/icon-google-plus.svg" alt="">
+                        <span>2,530</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Social Stats -->
+            <div id="members" class="row-2">
+                <!-- Begin Members Row -->
+                <div id="new-members" class="col col-first">
+                    <!-- Begin New Members -->
+                    <h2 class="section-header">New Members</h2>
+                    <ul id="new-mem-list">
+                        <li class="new-mem-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar1.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-name">John Alexander</span>
+                                <br>
+                                <a class="user-email" href="mailto:johna@example.com">johna@example.com</a>
+                            </p>
+                            <span class="join-date">10/17/2016</span>
+                        </li>
+                        <li class="new-mem-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar2.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-name">Emilio Chavez</span>
+                                <br>
+                                <a class="user-email" href="mailto:emilioc@example.com">emilioc@example.com</a>
+                            </p>
+                            <span class="join-date">10/14/2016</span>
+                        </li>
+                        <li class="new-mem-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar3.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-name">Aiden Jones</span>
+                                <br>
+                                <a class="user-email" href="mailto:aj@example.com">aj@example.com</a>
+                            </p>
+                            <span class="join-date">9/30/2016</span>
+                        </li>
+                        <li class="new-mem-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar4.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-name">Keith Martell</span>
+                                <br>
+                                <a class="user-email" href="mailto:km@example.com">km@example.com</a>
+                            </p>
+                            <span class="join-date">9/18/2016</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End New Members -->
+                <div id="member-activity" class="col col-second">
+                    <!-- Begin Member Activity -->
+                    <h2 class="section-header">Member Activity</h2>
+                    <ul id="recent-activity-list">
+                        <li class="recent-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar5.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-activity">Jason Allen commented on YourApp's SEO Tips</span>
+                                <br>
+                                <span class="activity-time">7 Hours Ago</span>
+                                <a href="#"><span class="recent-item-link"></span></a>
+                            </p>
+                            <img class="activity-arrow" alt="" src="img/icons/icon-arrow.svg">
+                        </li>
+                        <li class="recent-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar6.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-activity">Avie Marc commented on YourApp's SEO Tips</span>
+                                <br>
+                                <span class="activity-time">8 Hours Ago</span>
+                                <a href="#"><span class="recent-item-link"></span></a>
+                            </p>
+                            <img class="activity-arrow" alt="" src="img/icons/icon-arrow.svg">
+                        </li>
+                        <li class="recent-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar7.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-activity">Josh Wu commented on YourApp's SEO Tips</span>
+                                <br>
+                                <span class="activity-time">8 Hours Ago</span>
+                                <a href="#"><span class="recent-item-link"></span></a>
+                            </p>
+                            <img class="activity-arrow" alt="" src="img/icons/icon-arrow.svg">
+                        </li>
+                        <li class="recent-item activity-item">
+                            <img class="user-avatar" alt="" src="img/avatar8.jpg">
+                            <p class="mem-activity-info">
+                                <span class="user-activity">Ethan Hart commented on YourApp's SEO Tips</span>
+                                <br>
+                                <span class="activity-time">10 Hours Ago</span>
+                                <a href="#"><span class="recent-item-link"></span></a>
+                            </p>
+                            <img class="activity-arrow" alt="" src="img/icons/icon-arrow.svg">
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Member Activity -->
+            </div>
+            <!-- End Memebers Row -->
+            <div class="row-2">
+                <!-- Begin Messages and Settings columns-->
+                <div id="message" class="col col-first">
+                    <!-- Begin Messages column -->
+                    <h2 class="section-header">Messages</h2>
+                    <form id="user-message" action="#" method="get">
+                        <input class="user-input" id="user-search" placeholder="Search for User" name="user-search" type="text">
+                        <textarea id="user-message-area" class="user-input" rows="7" placeholder="Message for User"></textarea>
+                        <input type="submit" value="submit" id="message-submit" class="btn submit-btn">
+                    </form>
+                </div>
+                <!-- End Messages column -->
+                <div id="settings" class="col col-second">
+                    <!-- Begin Settings column -->
+                    <h2 class="section-header">Settings</h2>
+                    <form id="user-settings" action="get">
+                        <label class="switch-light switch-material toggle" onclick="">
+                            <input type="checkbox">
+                            <strong>Send Email Notifications</strong>
+                            <span>
+							<span>Off</span>
+                            <span>On</span>
+                            <a></a>
+                            </span>
+                        </label>
+                        <label class="switch-light switch-material toggle" onclick="">
+                            <input type="checkbox">
+                            <strong>Set Profile to Public</strong>
+                            <span>
+							<span>Off</span>
+                            <span>On</span>
+                            <a></a>
+                            </span>
+                        </label>
+                        <select class="user-input">
+                            <option value="" disabled selected>Select Timezone</option>
+                            <option data-timeZoneId="1" data-gmtAdjustment="GMT-12:00" data-useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</option>
+                            <option data-timeZoneId="2" data-gmtAdjustment="GMT-11:00" data-useDaylightTime="0" value="-11">(GMT-11:00) Midway Island, Samoa</option>
+                            <option data-timeZoneId="3" data-gmtAdjustment="GMT-10:00" data-useDaylightTime="0" value="-10">(GMT-10:00) Hawaii</option>
+                            <option data-timeZoneId="4" data-gmtAdjustment="GMT-09:00" data-useDaylightTime="1" value="-9">(GMT-09:00) Alaska</option>
+                            <option data-timeZoneId="5" data-gmtAdjustment="GMT-08:00" data-useDaylightTime="1" value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+                            <option data-timeZoneId="6" data-gmtAdjustment="GMT-08:00" data-useDaylightTime="1" value="-8">(GMT-08:00) Tijuana, Baja California</option>
+                            <option data-timeZoneId="7" data-gmtAdjustment="GMT-07:00" data-useDaylightTime="0" value="-7">(GMT-07:00) Arizona</option>
+                            <option data-timeZoneId="8" data-gmtAdjustment="GMT-07:00" data-useDaylightTime="1" value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                            <option data-timeZoneId="9" data-gmtAdjustment="GMT-07:00" data-useDaylightTime="1" value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+                            <option data-timeZoneId="10" data-gmtAdjustment="GMT-06:00" data-useDaylightTime="0" value="-6">(GMT-06:00) Central America</option>
+                            <option data-timeZoneId="11" data-gmtAdjustment="GMT-06:00" data-useDaylightTime="1" value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+                            <option data-timeZoneId="12" data-gmtAdjustment="GMT-06:00" data-useDaylightTime="1" value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                            <option data-timeZoneId="13" data-gmtAdjustment="GMT-06:00" data-useDaylightTime="0" value="-6">(GMT-06:00) Saskatchewan</option>
+                            <option data-timeZoneId="14" data-gmtAdjustment="GMT-05:00" data-useDaylightTime="0" value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                            <option data-timeZoneId="15" data-gmtAdjustment="GMT-05:00" data-useDaylightTime="1" value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                            <option data-timeZoneId="16" data-gmtAdjustment="GMT-05:00" data-useDaylightTime="1" value="-5">(GMT-05:00) Indiana (East)</option>
+                            <option data-timeZoneId="17" data-gmtAdjustment="GMT-04:00" data-useDaylightTime="1" value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
+                            <option data-timeZoneId="18" data-gmtAdjustment="GMT-04:00" data-useDaylightTime="0" value="-4">(GMT-04:00) Caracas, La Paz</option>
+                            <option data-timeZoneId="19" data-gmtAdjustment="GMT-04:00" data-useDaylightTime="0" value="-4">(GMT-04:00) Manaus</option>
+                            <option data-timeZoneId="20" data-gmtAdjustment="GMT-04:00" data-useDaylightTime="1" value="-4">(GMT-04:00) Santiago</option>
+                            <option data-timeZoneId="21" data-gmtAdjustment="GMT-03:30" data-useDaylightTime="1" value="-3.5">(GMT-03:30) Newfoundland</option>
+                            <option data-timeZoneId="22" data-gmtAdjustment="GMT-03:00" data-useDaylightTime="1" value="-3">(GMT-03:00) Brasilia</option>
+                            <option data-timeZoneId="23" data-gmtAdjustment="GMT-03:00" data-useDaylightTime="0" value="-3">(GMT-03:00) Buenos Aires, Georgetown</option>
+                            <option data-timeZoneId="24" data-gmtAdjustment="GMT-03:00" data-useDaylightTime="1" value="-3">(GMT-03:00) Greenland</option>
+                            <option data-timeZoneId="25" data-gmtAdjustment="GMT-03:00" data-useDaylightTime="1" value="-3">(GMT-03:00) Montevideo</option>
+                            <option data-timeZoneId="26" data-gmtAdjustment="GMT-02:00" data-useDaylightTime="1" value="-2">(GMT-02:00) Mid-Atlantic</option>
+                            <option data-timeZoneId="27" data-gmtAdjustment="GMT-01:00" data-useDaylightTime="0" value="-1">(GMT-01:00) Cape Verde Is.</option>
+                            <option data-timeZoneId="28" data-gmtAdjustment="GMT-01:00" data-useDaylightTime="1" value="-1">(GMT-01:00) Azores</option>
+                            <option data-timeZoneId="29" data-gmtAdjustment="GMT+00:00" data-useDaylightTime="0" value="0">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+                            <option data-timeZoneId="30" data-gmtAdjustment="GMT+00:00" data-useDaylightTime="1" value="0">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                            <option data-timeZoneId="31" data-gmtAdjustment="GMT+01:00" data-useDaylightTime="1" value="1">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                            <option data-timeZoneId="32" data-gmtAdjustment="GMT+01:00" data-useDaylightTime="1" value="1">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                            <option data-timeZoneId="33" data-gmtAdjustment="GMT+01:00" data-useDaylightTime="1" value="1">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                            <option data-timeZoneId="34" data-gmtAdjustment="GMT+01:00" data-useDaylightTime="1" value="1">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                            <option data-timeZoneId="35" data-gmtAdjustment="GMT+01:00" data-useDaylightTime="1" value="1">(GMT+01:00) West Central Africa</option>
+                            <option data-timeZoneId="36" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Amman</option>
+                            <option data-timeZoneId="37" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+                            <option data-timeZoneId="38" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Beirut</option>
+                            <option data-timeZoneId="39" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Cairo</option>
+                            <option data-timeZoneId="40" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="0" value="2">(GMT+02:00) Harare, Pretoria</option>
+                            <option data-timeZoneId="41" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                            <option data-timeZoneId="42" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Jerusalem</option>
+                            <option data-timeZoneId="43" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Minsk</option>
+                            <option data-timeZoneId="44" data-gmtAdjustment="GMT+02:00" data-useDaylightTime="1" value="2">(GMT+02:00) Windhoek</option>
+                            <option data-timeZoneId="45" data-gmtAdjustment="GMT+03:00" data-useDaylightTime="0" value="3">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+                            <option data-timeZoneId="46" data-gmtAdjustment="GMT+03:00" data-useDaylightTime="1" value="3">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                            <option data-timeZoneId="47" data-gmtAdjustment="GMT+03:00" data-useDaylightTime="0" value="3">(GMT+03:00) Nairobi</option>
+                            <option data-timeZoneId="48" data-gmtAdjustment="GMT+03:00" data-useDaylightTime="0" value="3">(GMT+03:00) Tbilisi</option>
+                            <option data-timeZoneId="49" data-gmtAdjustment="GMT+03:30" data-useDaylightTime="1" value="3.5">(GMT+03:30) Tehran</option>
+                            <option data-timeZoneId="50" data-gmtAdjustment="GMT+04:00" data-useDaylightTime="0" value="4">(GMT+04:00) Abu Dhabi, Muscat</option>
+                            <option data-timeZoneId="51" data-gmtAdjustment="GMT+04:00" data-useDaylightTime="1" value="4">(GMT+04:00) Baku</option>
+                            <option data-timeZoneId="52" data-gmtAdjustment="GMT+04:00" data-useDaylightTime="1" value="4">(GMT+04:00) Yerevan</option>
+                            <option data-timeZoneId="53" data-gmtAdjustment="GMT+04:30" data-useDaylightTime="0" value="4.5">(GMT+04:30) Kabul</option>
+                            <option data-timeZoneId="54" data-gmtAdjustment="GMT+05:00" data-useDaylightTime="1" value="5">(GMT+05:00) Yekaterinburg</option>
+                            <option data-timeZoneId="55" data-gmtAdjustment="GMT+05:00" data-useDaylightTime="0" value="5">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+                            <option data-timeZoneId="56" data-gmtAdjustment="GMT+05:30" data-useDaylightTime="0" value="5.5">(GMT+05:30) Sri Jayawardenapura</option>
+                            <option data-timeZoneId="57" data-gmtAdjustment="GMT+05:30" data-useDaylightTime="0" value="5.5">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                            <option data-timeZoneId="58" data-gmtAdjustment="GMT+05:45" data-useDaylightTime="0" value="5.75">(GMT+05:45) Kathmandu</option>
+                            <option data-timeZoneId="59" data-gmtAdjustment="GMT+06:00" data-useDaylightTime="1" value="6">(GMT+06:00) Almaty, Novosibirsk</option>
+                            <option data-timeZoneId="60" data-gmtAdjustment="GMT+06:00" data-useDaylightTime="0" value="6">(GMT+06:00) Astana, Dhaka</option>
+                            <option data-timeZoneId="61" data-gmtAdjustment="GMT+06:30" data-useDaylightTime="0" value="6.5">(GMT+06:30) Yangon (Rangoon)</option>
+                            <option data-timeZoneId="62" data-gmtAdjustment="GMT+07:00" data-useDaylightTime="0" value="7">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                            <option data-timeZoneId="63" data-gmtAdjustment="GMT+07:00" data-useDaylightTime="1" value="7">(GMT+07:00) Krasnoyarsk</option>
+                            <option data-timeZoneId="64" data-gmtAdjustment="GMT+08:00" data-useDaylightTime="0" value="8">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                            <option data-timeZoneId="65" data-gmtAdjustment="GMT+08:00" data-useDaylightTime="0" value="8">(GMT+08:00) Kuala Lumpur, Singapore</option>
+                            <option data-timeZoneId="66" data-gmtAdjustment="GMT+08:00" data-useDaylightTime="0" value="8">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+                            <option data-timeZoneId="67" data-gmtAdjustment="GMT+08:00" data-useDaylightTime="0" value="8">(GMT+08:00) Perth</option>
+                            <option data-timeZoneId="68" data-gmtAdjustment="GMT+08:00" data-useDaylightTime="0" value="8">(GMT+08:00) Taipei</option>
+                            <option data-timeZoneId="69" data-gmtAdjustment="GMT+09:00" data-useDaylightTime="0" value="9">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                            <option data-timeZoneId="70" data-gmtAdjustment="GMT+09:00" data-useDaylightTime="0" value="9">(GMT+09:00) Seoul</option>
+                            <option data-timeZoneId="71" data-gmtAdjustment="GMT+09:00" data-useDaylightTime="1" value="9">(GMT+09:00) Yakutsk</option>
+                            <option data-timeZoneId="72" data-gmtAdjustment="GMT+09:30" data-useDaylightTime="0" value="9.5">(GMT+09:30) Adelaide</option>
+                            <option data-timeZoneId="73" data-gmtAdjustment="GMT+09:30" data-useDaylightTime="0" value="9.5">(GMT+09:30) Darwin</option>
+                            <option data-timeZoneId="74" data-gmtAdjustment="GMT+10:00" data-useDaylightTime="0" value="10">(GMT+10:00) Brisbane</option>
+                            <option data-timeZoneId="75" data-gmtAdjustment="GMT+10:00" data-useDaylightTime="1" value="10">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                            <option data-timeZoneId="76" data-gmtAdjustment="GMT+10:00" data-useDaylightTime="1" value="10">(GMT+10:00) Hobart</option>
+                            <option data-timeZoneId="77" data-gmtAdjustment="GMT+10:00" data-useDaylightTime="0" value="10">(GMT+10:00) Guam, Port Moresby</option>
+                            <option data-timeZoneId="78" data-gmtAdjustment="GMT+10:00" data-useDaylightTime="1" value="10">(GMT+10:00) Vladivostok</option>
+                            <option data-timeZoneId="79" data-gmtAdjustment="GMT+11:00" data-useDaylightTime="1" value="11">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+                            <option data-timeZoneId="80" data-gmtAdjustment="GMT+12:00" data-useDaylightTime="1" value="12">(GMT+12:00) Auckland, Wellington</option>
+                            <option data-timeZoneId="81" data-gmtAdjustment="GMT+12:00" data-useDaylightTime="0" value="12">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+                            <option data-timeZoneId="82" data-gmtAdjustment="GMT+13:00" data-useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</option>
+                        </select>
+                        <input type="submit" value="submit" id="settings-submit" class="btn submit-btn settings-btn">
+                        <input type="reset" value="cancel" id="settings-cancel" class="btn cancel-btn settings-btn">
+                    </form>
+                </div>
+                <!-- End Settings column -->
+            </div>
+            <!-- End Messages and Settings columns-->
+        </div>
+        <!-- End Dashboard Content -->
+    </div>
+    <!-- End Wrapper -->
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.min.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/graphs.js"></script>
+</body>
+
+</html>
