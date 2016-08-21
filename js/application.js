@@ -1,7 +1,7 @@
 $(function() {
 	var $alerts = $('#alerts');
 	var $headerNotify = $('#header-alert-notify');
-	var $messageSubmitBtm = $('#message-submit');
+	var $messageSubmitBtn = $('#message-submit');
 
 	//alertUser creates notifications with click events
 	var alertUser = function() {
@@ -27,20 +27,46 @@ $(function() {
 			var $messageDiv = $('#message');
 			var $recipient = $('#user-search');
 			var $messageContent = $('#user-message-area');
+			var recipientError = "<div class='msgFailure'>Recipient field is required.</div>";
+			var msgBodyError = "<div class='msgFailure'>Message field is required.</div>";
 
+			var recipientErr = function() {
+				$recipient.css('border', '1px solid #cc0000');
+				$recipient.css('background', '#ffe6e6');
+				$recipient.after(recipientError);
+				$recipient.focus( function() {$recipient.next(".msgFailure").fadeOut();} );
+			};
 
+			var messageErr = function() {
+				$messageContent.css('border', '1px solid #cc0000');
+				$messageContent.css('background', '#ffe6e6');
+				$messageContent.after(msgBodyError);
+				$messageContent.focus( function() {$messageContent.next(".msgFailure").fadeOut();} );
+			};
 
-			if ($recipient.val() == "") {
-				alert('Message must have a recipient.');
+			var messageSuccess = function() {
+				$messageSubmitBtn.after('<div class="msgSuccess"> Your message was successfully sent to '+ $recipient.val() + '.</div>');
+				$(".msgSuccess").fadeOut(2000);
+			}
+
+			if ( $('.msgFailure') ) {
+				$('.msgFailure').remove();
+			}
+
+			if ( $recipient.val() == "" && $messageContent.val() == "" ) {
+				recipientErr();
+				messageErr();
+			} else if ($recipient.val() == "") {
+				recipientErr();
 			} else if ($messageContent.val() == "") {
-				alert('Message must not be blank.');
+				messageErr();
 			} else {
 				//Send message
-				alert('Your message was successfully sent to '+ $recipient.val());
+				messageSuccess();
 			}
 	};
 
-	$messageSubmitBtm.on('click', function(event) {
+	$messageSubmitBtn.on('click', function(event) {
 		event.preventDefault();
 		messageHandler();
 	});

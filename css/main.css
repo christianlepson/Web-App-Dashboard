@@ -570,9 +570,22 @@ label.toggle strong {
 	float: right;
 }
 
+.msgFailure {
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+	color: #cc0000;
+	font-size: .9rem;
+	font-weight: 700;
+}
+
 .msgSuccess {
+	display: block;
+	margin: 5px auto;
+	text-align: center;
 	color: #81c98f;
-	margin: 0 auto;
+	font-size: .9rem;
+	font-weight: 700;
 }
 
 /* ================================= 
