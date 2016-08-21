@@ -1,5 +1,4 @@
 $(function() {
-	var $messageDiv = $('#message');
 	var $alerts = $('#alerts');
 	var $headerNotify = $('#header-alert-notify');
 	var $messageSubmitBtm = $('#message-submit');
@@ -25,9 +24,25 @@ $(function() {
 
 	// Event handler for user message submission
 	var messageHandler = function() {
-			$messageDiv.append('<div class="msgSuccess"><p>Sent</p>');
+			var $messageDiv = $('#message');
+			var $recipient = $('#user-search');
+			var $messageContent = $('#user-message-area');
+
+
+
+			if ($recipient.val() == "") {
+				alert('Message must have a recipient.');
+			} else if ($messageContent.val() == "") {
+				alert('Message must not be blank.');
+			} else {
+				//Send message
+				alert('Your message was successfully sent to '+ $recipient.val());
+			}
 	};
 
-	$messageSubmitBtm.on('click', messageHandler);
+	$messageSubmitBtm.on('click', function(event) {
+		event.preventDefault();
+		messageHandler();
+	});
 	alertUser();
 });

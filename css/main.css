@@ -490,6 +490,12 @@ span.recent-item-link {
 	 z-index: 1;
 }
 
+.activity-icon {
+	display: block;
+	width: 20px;
+	margin: 0 15px;
+}
+
 .user-input {
 	display: block;
 	width: 95%;
